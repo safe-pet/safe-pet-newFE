@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   console.log("test");
-  console.log("tsts");
+  console.log(d1b21bd12b21);
   return (
     <>
       <Head>
