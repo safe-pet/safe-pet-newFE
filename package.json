@@ -11,6 +11,12 @@
     "lint-es": "eslint --cache .",
     "lint": "next lint"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "eslint . --fix && prettier --write",
+      "pre-push": "eslint . --fix && prettier --write"
+    }
+  },
   "dependencies": {
     "@next/font": "13.1.1",
     "@types/node": "18.11.18",
