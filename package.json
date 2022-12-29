@@ -11,6 +11,16 @@
     "lint-es": "eslint --cache .",
     "lint": "next lint"
   },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "pages/**/*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
   "husky": {
     "hooks": {
       "pre-commit": "eslint . --fix && prettier --write",
@@ -35,5 +45,8 @@
     "react-dom": "18.2.0",
     "styled-components": "^5.3.6",
     "typescript": "4.9.4"
+  },
+  "devDependencies": {
+    "lint-staged": "^13.1.0"
   }
 }
