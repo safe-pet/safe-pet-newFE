@@ -12,11 +12,14 @@ export const Header = () => {
 
 const HeaderContainer = styled.div`
   /* border: 1px solid red; */
+  position: fixed;
+  top: 0;
+  min-width: 480px;
   border-bottom: 1px solid #d6d2d2;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
+  padding: 20px 30px 15px 30px;
   & h1 {
     font-size: 28px;
     font-weight: 350;
