@@ -25,26 +25,26 @@ function MenuBar() {
   // );
 
   //class 만들기
-  // class MenuTab {
-  //   key;
-  //   tab;
-  //   constructor(key: string, tab: any) {
-  //     this.key = key;
-  //     this.tab = (
-  //       <span
-  //       // className={tabIndex === 0 ? "select" : ""}
-  //       // onClick={listHandler}
-  //       >
-  //         ${tab}
-  //       </span>
-  //     );
-  //   }
-  // }
-  // const tab1: MenuTab = new MenuTab("분양받기", "분양받기");
-  // const tab2: MenuTab = new MenuTab("커뮤니티", "커뮤니티");
-  // const tab3: MenuTab = new MenuTab("기타", "기타");
-  // const tab4: MenuTab = new MenuTab("사이트 소개", "사이트 소개");
-  // console.log(tab1, tab2, tab3, tab4);
+  class MenuTab {
+    key;
+    tab;
+    constructor(key: string, tab: any) {
+      this.key = key;
+      this.tab = (
+        <span
+        // className={tabIndex === 0 ? "select" : ""}
+        // onClick={listHandler}
+        >
+          ${tab}
+        </span>
+      );
+    }
+  }
+  const tab1: MenuTab = new MenuTab("분양받기", "분양받기");
+  const tab2: MenuTab = new MenuTab("커뮤니티", "커뮤니티");
+  const tab3: MenuTab = new MenuTab("기타", "기타");
+  const tab4: MenuTab = new MenuTab("사이트 소개", "사이트 소개");
+  console.log(tab1, tab2, tab3, tab4);
 
   // let list = new menu(key:"jeongwon", tab:"hi")
   // const tabArray = [
