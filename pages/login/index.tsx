@@ -5,7 +5,7 @@ import { KakaoLogin } from "../../src/components/sign/Kakao";
 import { NaverLogin } from "../../src/components/sign/Naver";
 import { GoogleLogin } from "../../src/components/sign/Google";
 // 특정 정보 받기 위해
-// main 구성 후 naver api 등록 검수 요청 필요
+// main 구성 후 소셜로그인(NAVER) api 등록 검수 요청 필요
 
 export default function Login() {
   return (
@@ -19,9 +19,9 @@ export default function Login() {
           width={360}
         />
         <SocialLogins>
-          <KakaoLogin />
+          {/* <KakaoLogin /> */}
           <NaverLogin />
-          <GoogleLogin />
+          {/* <GoogleLogin /> */}
         </SocialLogins>
       </SignWrap>
     </LoginContainer>
@@ -46,5 +46,6 @@ const SocialLogins = styled.div`
 
   & img {
     border-radius: 12px;
+    margin: 5px 0 5px 0;
   }
 `;
