@@ -3,7 +3,7 @@ import Image from "next/image";
 import { NextHead } from "../../src/utils/NextHead";
 import { KakaoLogin } from "../../src/components/sign/Kakao";
 import { NaverLogin } from "../../src/components/sign/Naver";
-
+import { GoogleLogin } from "../../src/components/sign/Google";
 // 특정 정보 받기 위해
 // main 구성 후 naver api 등록 검수 요청 필요
 
@@ -21,6 +21,7 @@ export default function Login() {
         <SocialLogins>
           <KakaoLogin />
           <NaverLogin />
+          <GoogleLogin />
         </SocialLogins>
       </SignWrap>
     </LoginContainer>

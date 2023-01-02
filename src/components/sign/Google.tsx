@@ -6,7 +6,7 @@ export const GoogleLogin = () => {
       <Image
         width="200"
         height="40"
-        src={require("../../image/sp-naverLogin.png")}
+        src={require("../../image/sp-googleLogin.png")}
         alt="naver login"
       />
     </>
