@@ -3,6 +3,7 @@ import { NextHead } from "../src/utils/NextHead";
 import BestMarkets from "../src/components/mainPage/best/BestMarkets";
 import { ParcelOutPet } from "../src/components/mainPage/parcelOutPet/ParcelOutPet";
 import { EventSlide } from "../src/components/mainPage/event/EventSlide";
+import { Layout } from "../src/components/layout/Layout";
 
 export default function Home() {
   return (
@@ -18,5 +19,7 @@ export default function Home() {
 }
 
 const Container = styled.div`
+  /* border: 1px solid red; */
+  max-width: 100vh;
   margin: 0 auto;
 `;

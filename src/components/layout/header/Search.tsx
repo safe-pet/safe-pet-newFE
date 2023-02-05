@@ -31,7 +31,7 @@ export const Search = () => {
   };
   const modal = Modal();
   return (
-    <>
+    <SearchContainer>
       {modal.ismodal ? (
         <modal.ModalView>{modalContent()}</modal.ModalView>
       ) : (
@@ -44,11 +44,17 @@ export const Search = () => {
           />
         </SearchBox>
       )}
-    </>
+    </SearchContainer>
   );
 };
 
-const SearchBox = styled.div``;
+const SearchContainer = styled.div``;
+const SearchBox = styled.div`
+  /* border: 1px solid black; */
+  margin-right: 15vw;
+  & img {
+  }
+`;
 const SearchInput = styled.input`
   border: transparent;
   color: #b7bdc6;

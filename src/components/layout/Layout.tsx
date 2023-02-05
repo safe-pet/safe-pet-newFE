@@ -15,9 +15,10 @@ export const Layout = ({ children }: any) => {
 };
 
 const LayoutContainer = styled.div`
+  z-index: 10;
   background-color: white;
   margin: 0 auto;
   max-width: 100vw;
-  height: 100vh;
+  height: 100%;
   transition: 0.3s;
 `;

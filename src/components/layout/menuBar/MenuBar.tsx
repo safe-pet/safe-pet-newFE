@@ -37,7 +37,7 @@ function MenuBar() {
     e.preventDefault();
     setTabIndex(4);
   };
-  console.log(tabIndex);
+  // console.log(tabIndex);
   const tab1: MenuTab = new MenuTab("분양받기", "분양받기", 1, adopHandler);
   const tab2: MenuTab = new MenuTab(
     "커뮤니티",
@@ -59,7 +59,7 @@ function MenuBar() {
   return (
     <MenuBarContainer>
       {tabArray.map(item => {
-        return <div key={item.key}>{item.tab}</div>;
+        return <TabBox key={item.key}>{item.tab}</TabBox>;
       })}
     </MenuBarContainer>
   );
@@ -67,12 +67,18 @@ function MenuBar() {
 export default MenuBar;
 
 const MenuBarContainer = styled.div`
+  /* border: 1px solid black; */
   position: fixed;
   top: 60px;
-  min-width: 480px;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  padding: 25px 30px;
+  justify-content: space-around;
+  margin-top: 20px;
+  padding: 10px;
+`;
+
+const TabBox = styled.div`
+  /* border: 1px solid black; */
 `;
 const TabName = styled.span`
   font-style: normal;

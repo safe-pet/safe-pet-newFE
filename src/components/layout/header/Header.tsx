@@ -12,17 +12,21 @@ export const Header = () => {
 };
 
 const HeaderContainer = styled.div`
-  /* border: 1px solid red; */
+  background-color: white;
   position: fixed;
   top: 0;
-  min-width: 480px;
+  width: 100%;
+  height: min-content;
   border-bottom: 1px solid #d6d2d2;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 30px 15px 30px;
+  margin-bottom: 10px;
+  /* padding: 20px 30px 15px 30px; */
   & h1 {
+    padding-left: 25px;
     font-size: 28px;
     font-weight: 350;
+    height: max-content;
   }
 `;

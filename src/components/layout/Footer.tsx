@@ -44,7 +44,7 @@ const FooterContainer = styled.div`
   position: fixed;
   bottom: 0;
   background-color: #e9e7e7;
-  padding: 0 20px;
+  /* padding: 0 20px; */
   & img {
     /* border: 1px solid black; */
     width: 40px;

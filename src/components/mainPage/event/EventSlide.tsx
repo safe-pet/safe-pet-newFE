@@ -150,7 +150,7 @@ const Container = styled.div`
 `;
 
 const SlideContainer = styled.div`
-  margin: 0 auto;
+  margin: 150px auto;
   width: 380px;
   height: 250px;
   /* border-radius: 10px; */
