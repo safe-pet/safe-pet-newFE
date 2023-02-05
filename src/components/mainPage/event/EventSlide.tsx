@@ -124,7 +124,6 @@ export const EventSlide = () => {
 
 const Container = styled.div`
   margin: 0 auto;
-  margin-bottom: 50px;
   width: 95vw;
   animation: slideFadein 0.3s;
   @keyframes slideFadein {
@@ -153,7 +152,8 @@ const ContentWrap = styled.div`
 `;
 
 const SlideContainer = styled.div`
-  margin: 150px auto;
+  margin: 0px auto;
+  margin-top: 100px;
   width: 380px;
   height: 300px;
   overflow: hidden;
@@ -186,14 +186,14 @@ const PrevNextBtn = styled.button`
   background-color: transparent;
   position: absolute;
   left: 5%;
-  top: 45%;
+  top: 38%;
   transform: translate(-50%, -50%);
   cursor: pointer;
   transition: 0.2s ease-in;
   &.next {
     position: absolute;
     left: 95%;
-    top: 45%;
+    top: 38%;
     transform: translate(-50%, -50%);
   }
   &:hover {
@@ -209,7 +209,7 @@ const PrevNextBtn = styled.button`
 const NumBox = styled.div`
   padding: 0 5px 0 5px;
   position: absolute;
-  top: 30%;
+  top: 23%;
   right: 60px;
   display: flex;
   border: 1px solid gray;
