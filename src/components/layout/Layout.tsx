@@ -1,4 +1,4 @@
-import { Header } from "./Header";
+import { Header } from "./header/Header";
 import MenuBar from "./menuBar/MenuBar";
 import styled from "styled-components";
 import { Footer } from "./Footer";

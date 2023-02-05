@@ -4,12 +4,6 @@ import styled from "styled-components";
 function MenuBar() {
   const [tabIndex, setTabIndex] = useState<number | any>(1);
 
-  // class Hander {
-  //   constructor(e:any){
-  //     e.preventDefault();
-  //     setTabIndex(0);
-  //   }
-
   class MenuTab {
     key;
     tab;
@@ -26,13 +20,6 @@ function MenuBar() {
     }
   }
 
-  // class eachHander {
-  //   constructor(e:any, index:number){
-  //     return{
-  //     e.preventDefault()
-  //     setTabIndex(index)}
-  //   }
-  // }
   const adopHandler = (e: any) => {
     e.preventDefault();
     setTabIndex(1);

@@ -1,11 +1,12 @@
 import Image from "next/image";
 import styled from "styled-components";
+import { Search } from "./Search";
 
 export const Header = () => {
   return (
     <HeaderContainer>
       <h1>SAFE PET</h1>
-      <Image width={25} src={require("src/image/sp-search.png")} alt="알림" />
+      <Search />
     </HeaderContainer>
   );
 };

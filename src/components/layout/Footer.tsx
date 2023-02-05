@@ -14,20 +14,20 @@ export const Footer = () => {
       <Link href={"/"}>
         <Image
           className="home"
-          src={require("src/image/sp-home2.png")}
+          src={require("src/image/sp-home1.png")}
           alt="홈"
         />
       </Link>
       <span onClick={() => pleaseLogin("/videos/add")}>
-        <Image src={require("src/image/sp-mapmarker2.png")} alt="지도" />
+        <Image src={require("src/image/sp-mapmarker1.png")} alt="지도" />
       </span>
       <span onClick={() => pleaseLogin("/subscribe")}>
-        <Image src={require("src/image/sp-chat2.png")} alt="채팅" />
+        <Image src={require("src/image/sp-chat1.png")} alt="채팅" />
       </span>
       <Link href={"/mypage"}>
         <Image
           className="myInfo"
-          src={require("src/image/sp-person2.png")}
+          src={require("src/image/sp-person1.png")}
           alt="내정보"
         />
       </Link>
