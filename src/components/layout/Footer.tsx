@@ -5,32 +5,38 @@ import Image from "next/image";
 import Router from "next/router";
 
 export const Footer = () => {
-  const pleaseLogin = (url: string) => {
-    Router.push(url);
-  };
+  class FooterIcon {
+    key: any;
+    linkPage: any;
+    imgIcon: any;
+    constructor(key: any, url: any, imgName: any, imgAlt: any) {
+      this.key = key;
+      this.linkPage = () => {
+        Router.push(url);
+      };
+      this.imgIcon = (
+        <span onClick={() => this.linkPage(`${url}`)}>
+          <Image src={require(`src/image/${imgName}.png`)} alt={`${imgAlt}`} />
+        </span>
+      );
+    }
+  }
+
+  const homeIcon = new FooterIcon(1, "/", "sp-home1", "홈");
+  const mapIcon = new FooterIcon(2, "/videos/add", "sp-mapmarker1", "지도");
+  const chatIcon = new FooterIcon(3, "/subscribe", "sp-chat1", "채팅");
+  const myPage = new FooterIcon(4, "/mypage", "sp-person1", "내정보");
+
+  const IconArray = [homeIcon, mapIcon, chatIcon, myPage];
+  // const pleaseLogin = (url: string) => {
+  //   Router.push(url);
+  // };
 
   return (
     <FooterContainer>
-      <Link href={"/"}>
-        <Image
-          className="home"
-          src={require("src/image/sp-home1.png")}
-          alt="홈"
-        />
-      </Link>
-      <span onClick={() => pleaseLogin("/videos/add")}>
-        <Image src={require("src/image/sp-mapmarker1.png")} alt="지도" />
-      </span>
-      <span onClick={() => pleaseLogin("/subscribe")}>
-        <Image src={require("src/image/sp-chat1.png")} alt="채팅" />
-      </span>
-      <Link href={"/mypage"}>
-        <Image
-          className="myInfo"
-          src={require("src/image/sp-person1.png")}
-          alt="내정보"
-        />
-      </Link>
+      {IconArray.map(icon => (
+        <div key={icon.key}>{icon.imgIcon}</div>
+      ))}
     </FooterContainer>
   );
 };
@@ -39,7 +45,7 @@ const FooterContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-width: 480px;
+  min-width: 100%;
   height: 60px;
   position: fixed;
   bottom: 0;
