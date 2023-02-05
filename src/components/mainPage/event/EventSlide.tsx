@@ -16,22 +16,18 @@ export const EventSlide = () => {
 
   const [imageNum, setImageNum] = useState(1);
   const [indexPx, setIndexPx] = useState(0);
-  const [indexInit, setIndexInit] = useState(0.1);
+  const [indexInit, setIndexInit] = useState(0.3);
 
   useEffect(() => {
     setIndexInit(0);
     setIndexPx(indexPx - indexRight);
     setTimeout(() => {
-      setIndexInit(0.1);
+      setIndexInit(0.2);
     }, 300);
   }, []);
 
-  const [imageChange, setImageChange] = useState<boolean>(false);
-
   const goPrev = (e: ClickDiv) => {
     e.stopPropagation();
-    if (imageChange) return;
-    setImageChange(true);
     if (imageNum !== 1) {
       setImageNum(imageNum - 1);
       setIndexPx(indexPx + indexRight);
@@ -43,16 +39,13 @@ export const EventSlide = () => {
         setIndexPx(indexRight * (-imageArrLength + 2));
       }, 200);
       setTimeout(() => {
-        setIndexInit(0.1);
+        setIndexInit(0.3);
       }, 300);
     }
-    setImageChange(false);
   };
-  console.log(imageChange);
+
   const goNext = (e: ClickDiv) => {
     e.stopPropagation();
-    if (imageChange) return;
-    setImageChange(true);
     if (imageNum !== imageArrLength - 2) {
       setImageNum(imageNum + 1);
       setIndexPx(indexPx - indexRight);
@@ -64,10 +57,9 @@ export const EventSlide = () => {
         setIndexPx(indexRight * -1);
       }, 200);
       setTimeout(() => {
-        setIndexInit(0.1);
+        setIndexInit(0.3);
       }, 300);
     }
-    setImageChange(false);
   };
 
   const slideButtons = [
@@ -89,6 +81,9 @@ export const EventSlide = () => {
 
   return (
     <Container>
+      <ContentWrap>
+        <p>EVENTS</p>
+      </ContentWrap>
       <SlideContainer onClick={(e: ClickDiv) => e.stopPropagation()}>
         <SlideBox
           style={{
@@ -103,7 +98,6 @@ export const EventSlide = () => {
           ))}
           <Image src={imageArray[0]} alt="cloneStart" />
         </SlideBox>
-        {/* <ArrowBox> */}
         {slideButtons.map((item, index) => {
           const { name, handler, icon } = item;
           return (
@@ -112,7 +106,6 @@ export const EventSlide = () => {
             </PrevNextBtn>
           );
         })}
-        {/* </ArrowBox> */}
         <NumBox>
           <span>{`${imageNum} / ${imageArrLength - 2}`}</span>
           {slideButtons.map((item, index) => {
@@ -149,17 +142,22 @@ const Container = styled.div`
   }
 `;
 
+const ContentWrap = styled.div`
+  display: flex;
+  justify-content: center;
+  & p {
+    width: 80vw;
+    font-size: 25px;
+    font-weight: bold;
+  }
+`;
+
 const SlideContainer = styled.div`
   margin: 0 auto;
   width: 380px;
-  height: 250px;
-  /* border-radius: 10px; */
+  height: 300px;
   overflow: hidden;
   border: 1px solid black;
-  /* position: relative;
-  left: 50%;
-  top: 40%; */
-  /* transform: translate(-50%, -50%); */
   user-select: none;
   -webkit-user-select: none;
 `;
@@ -169,8 +167,7 @@ const SlideBox = styled.div`
   transition: 0.2s;
   & img {
     width: 380px;
-    height: 250px;
-    /* border-radius: 5px; */
+    height: 300px;
     text-align: center;
   }
 `;
@@ -189,14 +186,14 @@ const PrevNextBtn = styled.button`
   background-color: transparent;
   position: absolute;
   left: 5%;
-  top: 33%;
+  top: 45%;
   transform: translate(-50%, -50%);
   cursor: pointer;
   transition: 0.2s ease-in;
   &.next {
     position: absolute;
     left: 95%;
-    top: 33%;
+    top: 45%;
     transform: translate(-50%, -50%);
   }
   &:hover {
@@ -212,7 +209,7 @@ const PrevNextBtn = styled.button`
 const NumBox = styled.div`
   padding: 0 5px 0 5px;
   position: absolute;
-  top: 185px;
+  top: 30%;
   right: 60px;
   display: flex;
   border: 1px solid gray;

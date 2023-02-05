@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { NextHead } from "../src/utils/NextHead";
-import BestMarkets from "../src/components/mainPage/best/BestMarkets";
+import { BestMarkets } from "../src/components/mainPage/best/BestMarkets";
 import { ParcelOutPet } from "../src/components/mainPage/parcelOutPet/ParcelOutPet";
 import { EventSlide } from "../src/components/mainPage/event/EventSlide";
 
