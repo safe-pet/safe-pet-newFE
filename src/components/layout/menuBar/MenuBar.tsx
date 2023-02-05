@@ -68,13 +68,14 @@ export default MenuBar;
 
 const MenuBarContainer = styled.div`
   /* border: 1px solid black; */
+  background-color: white;
   position: fixed;
   top: 60px;
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: space-around;
-  margin-top: 20px;
-  padding: 10px;
+  margin-top: 12px;
+  padding: 10px 0;
 `;
 
 const TabBox = styled.div`

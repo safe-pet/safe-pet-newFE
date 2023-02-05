@@ -1,7 +1,7 @@
 import { Header } from "./header/Header";
 import MenuBar from "./menuBar/MenuBar";
 import styled from "styled-components";
-import { Footer } from "./Footer";
+import { Footer } from "./footer/Footer";
 
 export const Layout = ({ children }: any) => {
   return (
@@ -15,6 +15,8 @@ export const Layout = ({ children }: any) => {
 };
 
 const LayoutContainer = styled.div`
+  display: flex;
+  justify-content: center;
   z-index: 10;
   background-color: white;
   margin: 0 auto;

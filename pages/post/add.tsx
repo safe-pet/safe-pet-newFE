@@ -1,84 +1,117 @@
-import styled from "styled-components";
 import Image from "next/image";
+import React from "react";
+import styled from "styled-components";
 
-export default function AddPost() {
+type Props = {};
+
+export default function ParcelOutPost(props: Props) {
   return (
     <Container>
-      <p>분양글 작성</p>
-      <FileInput>
-        <label htmlFor="imageInput">
-          <Image
-            src={require("../../src/image/sp-camera.png")}
-            alt="사진 업로드"
-            width="80"
-          />
-          <span>사진 선택</span>
-          <span>(최대 5장)</span>
-        </label>
-        <input type="file" name="imageInput" id="imageInput" />
-      </FileInput>
-      <ContentWrap>
-        <input type="text" name="title" placeholder="제목" />
-        <textarea name="content" placeholder="내용"></textarea>
-      </ContentWrap>
+      <TopBox>
+        <span>분양글 쓰기</span>
+        <button>
+          <span>올리기</span>
+        </button>
+      </TopBox>
+      <UploadContainer>
+        <Image src={require(`src/image/sp-upload.png`)} alt="업로드" />
+        {/* <span>{`사진 올리기 \n (최대 10장)`}</span> */}
+        <span>사진 올리기 </span>
+        <span style={{ fontSize: "13px", color: "gray" }}>(최대 10장)</span>
+      </UploadContainer>
+      <TitleInput placeholder="제목을 입력해 주세요" />
+      <ContentInput placeholder="내용을 입력해 주세요" />
     </Container>
   );
 }
 
 const Container = styled.div`
-  margin: 0 auto;
-  margin-top: 150px;
-  width: 95vw;
-`;
-
-const FileInput = styled.div`
+  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
-  border: 1px solid #ffbd13;
-  border-radius: 15px;
-  & input {
-    display: none;
-  }
-  & label {
-    width: 95vw;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  /* margin-top: 130px; */
+  margin: 130px 35px 0 35px;
+  width: 100vw;
+  height: 100vh;
+  /* margin: 0 20px; */
+`;
 
+const TopBox = styled.div`
+  /* border: 1px solid black; */
+  /* left: 0; */
+  display: flex;
+  justify-content: space-between;
+  /* position: fixed; */
+  /* width: 100vw; */
+  align-items: center;
+  & button {
+    width: 67px;
+    height: 36px;
+    background: #ffbd13;
+    border: transparent;
+    border-radius: 10px;
     & span {
+      font-weight: 600;
       font-size: 18px;
-      font-weight: bold;
-      &:last-child {
-        color: gray;
-        font-size: 14px;
-      }
+      color: #ffffff;
     }
   }
 `;
 
-const ContentWrap = styled.div`
-  margin-top: 30px;
-  margin-bottom: 30px;
+const UploadContainer = styled.div`
+  /* border: 1px solid red; */
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
-
-  & input {
-    margin-bottom: 15px;
-    height: 45px;
-    font-size: 1.4rem;
-    border: 1px solid #ffbd13;
-    border-radius: 10px;
-    outline-color: #ffbd13;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 270px;
+  background-color: #e9e9e9;
+  margin: 15px auto;
+  & span {
+    white-space: pre-line;
   }
-  & textarea {
-    padding: 5px;
-    height: 180px;
-    font-size: 1.2rem;
-    border: 1px solid #ffbd13;
-    border-radius: 10px;
-    outline-color: #ffbd13;
-    resize: none;
+`;
+
+const TitleInput = styled.input`
+  box-sizing: border-box;
+  /* width: 450px; */
+  height: 59px;
+  background: #ffffff;
+  border: 1px solid #a7a7a7;
+  border-radius: 5px;
+
+  text-indent: 10px;
+  ::placeholder {
+    color: #a7a7a7;
+    text-indent: 10px;
+  }
+  :focus {
+    outline: none;
+    ::placeholder {
+      color: transparent;
+    }
+  }
+`;
+
+const ContentInput = styled.textarea`
+  margin-top: 15px;
+  height: 232px;
+  background: #ffffff;
+  border: 1px solid #a7a7a7;
+  border-radius: 5px;
+  padding: 10px;
+  ::placeholder {
+    color: #a7a7a7;
+    /* text-indent: 10px; */
+    position: absolute;
+    top: 20px;
+  }
+  :focus {
+    outline: none;
+    ::placeholder {
+      color: transparent;
+    }
   }
 `;

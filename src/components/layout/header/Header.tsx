@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styled from "styled-components";
+import { Layout } from "..";
 import { Search } from "./Search";
 
 export const Header = () => {
@@ -15,7 +16,7 @@ const HeaderContainer = styled.div`
   background-color: white;
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 100vw;
   height: min-content;
   border-bottom: 1px solid #d6d2d2;
   display: flex;
