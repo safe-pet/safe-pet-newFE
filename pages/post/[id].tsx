@@ -1,8 +1,9 @@
 import styled from "styled-components";
-export default function AddPost() {
+
+export default function PostDetail() {
   return (
     <div>
-      <p>포스팅 페이지</p>
+      <p>new Component</p>
     </div>
   );
 }
