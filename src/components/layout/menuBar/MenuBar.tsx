@@ -71,11 +71,11 @@ const MenuBarContainer = styled.div`
   background-color: white;
   position: fixed;
   top: 60px;
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: space-around;
   margin-top: 12px;
-  padding: 10px;
+  padding: 10px 0;
 `;
 
 const TabBox = styled.div`
