@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Image from "next/image";
 
-export const SalePet = () => {
+export const ParcelOutPet = () => {
   return (
     <Container>
       <ContentWrap>
