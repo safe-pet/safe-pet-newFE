@@ -5,21 +5,21 @@ import { ClickDiv } from "../type";
 
 export function BestMarkets() {
   let imageArray = [
-    require("../../../image/mainLogo.png"),
-    require("../../../image/mainLogo.png"),
-    require("../../../image/mainLogo.png"),
-    require("../../../image/mainLogo.png"),
-    require("../../../image/mainLogo.png"),
-    require("../../../image/mainLogo.png"),
-    require("../../../image/mainLogo.png"),
-    require("../../../image/mainLogo.png"),
-    require("../../../image/mainLogo.png"),
-    require("../../../image/mainLogo.png"),
-    require("../../../image/mainLogo.png"),
-    require("../../../image/mainLogo.png"),
-    require("../../../image/mainLogo.png"),
-    require("../../../image/mainLogo.png"),
-    require("../../../image/mainLogo.png"),
+    require("../../../image/sp-dummy1.png"),
+    require("../../../image/sp-dummy2.png"),
+    require("../../../image/sp-dummy3.png"),
+    require("../../../image/sp-dummy1.png"),
+    require("../../../image/sp-dummy2.png"),
+    require("../../../image/sp-dummy3.png"),
+    require("../../../image/sp-dummy1.png"),
+    require("../../../image/sp-dummy2.png"),
+    require("../../../image/sp-dummy3.png"),
+    require("../../../image/sp-dummy1.png"),
+    require("../../../image/sp-dummy2.png"),
+    require("../../../image/sp-dummy3.png"),
+    require("../../../image/sp-dummy1.png"),
+    require("../../../image/sp-dummy2.png"),
+    require("../../../image/sp-dummy3.png"),
   ];
 
   let imageArrLength = imageArray?.length;
@@ -78,8 +78,8 @@ export function BestMarkets() {
               <ViewItemWrap key={index}>
                 <Image src={item} alt="slideImg" />
                 <div>yohans</div>
-                <span>지역</span>
-                <span>태그</span>
+                <span>서울</span>
+                <span>1분 전</span>
               </ViewItemWrap>
             );
           })}

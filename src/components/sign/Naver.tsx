@@ -1,6 +1,10 @@
 import Image from "next/image";
 
-export const NaverLogin = () => {
+interface childProps {
+  loginHandler: () => void;
+}
+
+export const NaverLogin = ({ loginHandler }: childProps) => {
   return (
     <>
       <Image
@@ -8,6 +12,7 @@ export const NaverLogin = () => {
         height="40"
         src={require("../../image/sp-naverLogin.png")}
         alt="naver login"
+        onClick={loginHandler}
       />
     </>
   );

@@ -5,10 +5,10 @@ import { ClickDiv } from "../type";
 
 export const EventSlide = () => {
   let imageArray = [
-    require("../../../image/mainLogo.png"),
-    require("../../../image/mainLogo.png"),
-    require("../../../image/mainLogo.png"),
-    require("../../../image/mainLogo.png"),
+    require("../../../image/sp-dummy1.png"),
+    require("../../../image/sp-dummy1.png"),
+    require("../../../image/sp-dummy1.png"),
+    require("../../../image/sp-dummy1.png"),
   ];
 
   let imageArrLength = imageArray?.length + 2;
