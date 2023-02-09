@@ -18,16 +18,6 @@ declare global {
 export default function Login() {
   const router = useRouter();
 
-  useEffect(() => {
-    try {
-      if (!window.Kakao.isInitialized() && window.Kakao) {
-        window.Kakao.init(process.env.NEXT_PUBLIC_KAKAO_JAVASCRIPT);
-      }
-    } catch (e) {
-      console.log(e);
-    }
-  }, []);
-  // console.log(window);
   return (
     <LoginContainer>
       {/* {isLoading ? <LoadingSpinner /> : null} */}
@@ -40,7 +30,7 @@ export default function Login() {
           width={360}
         />
         <SocialLogins>
-          {/* <KakaoLogin /> */}
+          <KakaoLogin />
           <NaverLogin />
           {/* <GoogleLogin /> */}
         </SocialLogins>
