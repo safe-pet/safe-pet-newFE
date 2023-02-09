@@ -2,14 +2,21 @@ import { Header } from "./header/Header";
 import MenuBar from "./menuBar/MenuBar";
 import styled from "styled-components";
 import { Footer } from "./footer/Footer";
+import { useRouter } from "next/router";
 
 export const Layout = ({ children }: any) => {
+  const { pathname } = useRouter();
+
   return (
     <LayoutContainer>
-      <Header />
-      <MenuBar />
       {children}
-      <Footer />
+      {pathname === "/login" ? null : (
+        <>
+          <Header />
+          <MenuBar />
+          <Footer />
+        </>
+      )}
     </LayoutContainer>
   );
 };

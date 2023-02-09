@@ -12,7 +12,39 @@ export const ParcelOutPet = () => {
           <Image
             width={300}
             height={300}
-            src={`https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcUliu4%2FbtrCY7tLpOi%2FN4XWqMAanZTpSzOoCqykJK%2Ftfile.svg`}
+            src={require("../../../image/sp-dummy1.png")}
+            alt="썸네일"
+            unoptimized
+          />
+          <PostInfo>
+            <p>
+              호창쓰<span> / 네발바닥냥카페</span>
+            </p>
+            <span>서울</span>
+            <span>남 / 30대</span>
+          </PostInfo>
+        </PostCardWrap>
+        <PostCardWrap>
+          <Image
+            width={300}
+            height={300}
+            src={require("../../../image/sp-dummy3.png")}
+            alt="썸네일"
+            unoptimized
+          />
+          <PostInfo>
+            <p>
+              호창쓰<span> / 네발바닥냥카페</span>
+            </p>
+            <span>지역</span>
+            <span>남 / 30대</span>
+          </PostInfo>
+        </PostCardWrap>
+        <PostCardWrap>
+          <Image
+            width={300}
+            height={300}
+            src={require("../../../image/sp-dummy2.png")}
             alt="썸네일"
             unoptimized
           />
@@ -28,7 +60,7 @@ export const ParcelOutPet = () => {
           <Image
             width={300}
             height={300}
-            src={`https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcUliu4%2FbtrCY7tLpOi%2FN4XWqMAanZTpSzOoCqykJK%2Ftfile.svg`}
+            src={require("../../../image/sp-dummy1.png")}
             alt="썸네일"
             unoptimized
           />
@@ -44,7 +76,7 @@ export const ParcelOutPet = () => {
           <Image
             width={300}
             height={300}
-            src={`https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcUliu4%2FbtrCY7tLpOi%2FN4XWqMAanZTpSzOoCqykJK%2Ftfile.svg`}
+            src={require("../../../image/sp-dummy3.png")}
             alt="썸네일"
             unoptimized
           />
@@ -60,7 +92,7 @@ export const ParcelOutPet = () => {
           <Image
             width={300}
             height={300}
-            src={`https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcUliu4%2FbtrCY7tLpOi%2FN4XWqMAanZTpSzOoCqykJK%2Ftfile.svg`}
+            src={require("../../../image/sp-dummy2.png")}
             alt="썸네일"
             unoptimized
           />
@@ -76,7 +108,7 @@ export const ParcelOutPet = () => {
           <Image
             width={300}
             height={300}
-            src={`https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcUliu4%2FbtrCY7tLpOi%2FN4XWqMAanZTpSzOoCqykJK%2Ftfile.svg`}
+            src={require("../../../image/sp-dummy1.png")}
             alt="썸네일"
             unoptimized
           />
@@ -92,7 +124,7 @@ export const ParcelOutPet = () => {
           <Image
             width={300}
             height={300}
-            src={`https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcUliu4%2FbtrCY7tLpOi%2FN4XWqMAanZTpSzOoCqykJK%2Ftfile.svg`}
+            src={require("../../../image/sp-dummy3.png")}
             alt="썸네일"
             unoptimized
           />
@@ -108,7 +140,7 @@ export const ParcelOutPet = () => {
           <Image
             width={300}
             height={300}
-            src={`https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcUliu4%2FbtrCY7tLpOi%2FN4XWqMAanZTpSzOoCqykJK%2Ftfile.svg`}
+            src={require("../../../image/sp-dummy1.png")}
             alt="썸네일"
             unoptimized
           />
@@ -124,7 +156,7 @@ export const ParcelOutPet = () => {
           <Image
             width={300}
             height={300}
-            src={`https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcUliu4%2FbtrCY7tLpOi%2FN4XWqMAanZTpSzOoCqykJK%2Ftfile.svg`}
+            src={require("../../../image/sp-dummy1.png")}
             alt="썸네일"
             unoptimized
           />
@@ -140,39 +172,7 @@ export const ParcelOutPet = () => {
           <Image
             width={300}
             height={300}
-            src={`https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcUliu4%2FbtrCY7tLpOi%2FN4XWqMAanZTpSzOoCqykJK%2Ftfile.svg`}
-            alt="썸네일"
-            unoptimized
-          />
-          <PostInfo>
-            <p>
-              닉네임<span> / 사업자 상호명</span>
-            </p>
-            <span>지역</span>
-            <span>성별 / 연령대</span>
-          </PostInfo>
-        </PostCardWrap>
-        <PostCardWrap>
-          <Image
-            width={300}
-            height={300}
-            src={`https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcUliu4%2FbtrCY7tLpOi%2FN4XWqMAanZTpSzOoCqykJK%2Ftfile.svg`}
-            alt="썸네일"
-            unoptimized
-          />
-          <PostInfo>
-            <p>
-              닉네임<span> / 사업자 상호명</span>
-            </p>
-            <span>지역</span>
-            <span>성별 / 연령대</span>
-          </PostInfo>
-        </PostCardWrap>
-        <PostCardWrap>
-          <Image
-            width={300}
-            height={300}
-            src={`https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcUliu4%2FbtrCY7tLpOi%2FN4XWqMAanZTpSzOoCqykJK%2Ftfile.svg`}
+            src={require("../../../image/sp-dummy1.png")}
             alt="썸네일"
             unoptimized
           />
@@ -213,6 +213,7 @@ const PostGrid = styled.div`
 `;
 
 const PostCardWrap = styled.div`
+  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -223,7 +224,7 @@ const PostInfo = styled.div`
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-  width: 90vw;
+  width: 70vw;
 
   & span {
     color: gray;
