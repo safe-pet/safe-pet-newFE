@@ -4,6 +4,7 @@ import { BestMarkets } from "../src/components/mainPage/best/BestMarkets";
 import { ParcelOutPet } from "../src/components/mainPage/parcelOutPet/ParcelOutPet";
 import { EventSlide } from "../src/components/mainPage/event/EventSlide";
 import { Layout } from "../src/components/layout";
+import { Map } from "react-kakao-maps-sdk";
 
 export default function Home() {
   return (

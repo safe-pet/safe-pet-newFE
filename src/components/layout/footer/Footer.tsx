@@ -23,7 +23,7 @@ export const Footer = () => {
   }
 
   const homeIcon = new FooterIcon(1, "/", "sp-home1", "홈");
-  const mapIcon = new FooterIcon(2, "/videos/add", "sp-mapmarker1", "지도");
+  const mapIcon = new FooterIcon(2, "/map", "sp-mapmarker1", "지도");
   const chatIcon = new FooterIcon(3, "/subscribe", "sp-chat1", "채팅");
   const myPage = new FooterIcon(4, "/mypage", "sp-person1", "내정보");
 
