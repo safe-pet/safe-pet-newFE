@@ -4,26 +4,33 @@ import { NextHead } from "../../src/utils/NextHead";
 import { KakaoLogin } from "../../src/components/sign/Kakao";
 import { NaverLogin } from "../../src/components/sign/Naver";
 import { GoogleLogin } from "../../src/components/sign/Google";
-// 특정 정보 받기 위해
-// main 구성 후 소셜로그인(NAVER) api 등록 검수 요청 필요
-
-import Router from "next/router";
-import { useState } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import { LoadingSpinner } from "../../src/utils/LoadingSpinner";
 
-export default function Login() {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const loginHandler = () => {
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-      Router.push("/");
-    }, 1000);
-  };
+declare global {
+  interface Window {
+    Kakao: any;
+    naver: any;
+  }
+}
 
+export default function Login() {
+  const router = useRouter();
+
+  useEffect(() => {
+    try {
+      if (!window.Kakao.isInitialized() && window.Kakao) {
+        window.Kakao.init(process.env.NEXT_PUBLIC_KAKAO_JAVASCRIPT);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }, []);
+  // console.log(window);
   return (
     <LoginContainer>
-      {isLoading ? <LoadingSpinner /> : null}
+      {/* {isLoading ? <LoadingSpinner /> : null} */}
       <NextHead descrpition="safe-pet login" />
       <SignWrap>
         <Image
@@ -34,7 +41,7 @@ export default function Login() {
         />
         <SocialLogins>
           {/* <KakaoLogin /> */}
-          <NaverLogin loginHandler={loginHandler} />
+          <NaverLogin />
           {/* <GoogleLogin /> */}
         </SocialLogins>
       </SignWrap>
@@ -61,5 +68,6 @@ const SocialLogins = styled.div`
   & img {
     border-radius: 12px;
     margin: 5px 0 5px 0;
+    cursor: pointer;
   }
 `;
