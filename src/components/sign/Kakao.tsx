@@ -6,9 +6,20 @@ export const KakaoLoginButton = () => {
   const router = useRouter();
 
   const kakaoLoginHandler = () => {
-    window.Kakao.Auth.authorize({
-      redirectUri: `${process.env.NEXT_PUBLIC_CALLBACK_URL}`,
-      prompts: "login",
+    window.Kakao.Auth.login({
+      success: (response: any) => {
+        console.log("11111", response),
+          window.Kakao.API.request({
+            url: "/v2/user/me",
+            success: (res: any) => {
+              const kakao_account = res.kakao_account;
+              console.log("22222", kakao_account);
+            },
+          });
+      },
+      fail: (err: any) => {
+        console.log(err);
+      },
     });
   };
 
