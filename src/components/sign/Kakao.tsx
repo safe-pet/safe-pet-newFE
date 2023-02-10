@@ -2,12 +2,13 @@ import Image from "next/image";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 
-export const KakaoLogin = () => {
+export const KakaoLoginButton = () => {
   const router = useRouter();
 
-  const kakaoLogingHandler = () => {
+  const kakaoLoginHandler = () => {
     window.Kakao.Auth.authorize({
-      redirectUri: `${process.env.NEXT_PUBLIC_REDIRECT_URL}`,
+      redirectUri: `${process.env.NEXT_PUBLIC_CALLBACK_URL}`,
+      prompts: "login",
     });
   };
 
@@ -30,7 +31,7 @@ export const KakaoLogin = () => {
         height="40"
         src={require("../../image/sp-kakaoLogin.png")}
         alt="kakao login"
-        onClick={kakaoLogingHandler}
+        onClick={kakaoLoginHandler}
       />
     </>
   );

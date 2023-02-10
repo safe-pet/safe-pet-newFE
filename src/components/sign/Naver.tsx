@@ -1,18 +1,17 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import axios from "axios";
 
 interface childProps {
   loginHandler: () => void;
 }
 
-export const NaverLogin = () => {
+export const NaverLoginButton = () => {
   const router = useRouter();
 
   const NAVER_CLIENT_ID = process.env.NEXT_PUBLIC_NAVER_CLIENT_ID;
   const NAVER_CALLBACK_URL = process.env.NEXT_PUBLIC_CALLBACK_URL;
-
-  const [userInfo, setUserInfo] = useState();
 
   const initializeNaverLogin = (window: any) => {
     const naverLogin = new window.naver.LoginWithNaverId({
@@ -26,30 +25,27 @@ export const NaverLogin = () => {
 
     naverLogin.getLoginStatus(async function (status: any) {
       if (status) {
-        // 아래처럼 선택하여 추출이 가능하고,
-        const userid = naverLogin.user.getEmail();
-        const username = naverLogin.user.getName();
-        // 정보 전체를 아래처럼 state 에 저장하여 추출하여 사용가능하다.
-        // setUserInfo(naverLogin.user)
+        const { id, nickname, profile_image } = naverLogin.user;
+        console.log(id);
+        console.log(nickname);
+        console.log(profile_image);
       }
     });
     // 요기!
   };
-
-  // 네이버 소셜 로그인 (네아로) 는 URL 에 엑세스 토큰이 붙어서 전달된다.
-  // 우선 아래와 같이 토큰을 추출 할 수 있으며,
-  // 3부에 작성 될 Redirect 페이지를 통해 빠르고, 깨끗하게 처리가 가능하다.
+  // console.log(window);
 
   const userAccessToken = (window: any) => {
     window.location.href.includes("access_token") && getToken();
   };
 
-  const getToken = () => {
+  const getToken = async () => {
     const token = window.location.href.split("=")[1].split("&")[0];
     // console.log, alert 창을 통해 토큰이 잘 추출 되는지 확인하자!
 
+    console.log(token);
     // 이후 로컬 스토리지 또는 state에 저장하여 사용하자!
-    // localStorage.setItem('access_token', token)
+    localStorage.setItem("access_token", token);
     // setGetToken(token)
   };
 

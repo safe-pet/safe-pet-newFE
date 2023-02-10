@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import Image from "next/image";
 import { NextHead } from "../../src/utils/NextHead";
-import { KakaoLogin } from "../../src/components/sign/Kakao";
-import { NaverLogin } from "../../src/components/sign/Naver";
-import { GoogleLogin } from "../../src/components/sign/Google";
+import { KakaoLoginButton } from "../../src/components/sign/Kakao";
+import { NaverLoginButton } from "../../src/components/sign/Naver";
+import { GoogleLoginButton } from "../../src/components/sign/Google";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { LoadingSpinner } from "../../src/utils/LoadingSpinner";
@@ -12,6 +12,7 @@ declare global {
   interface Window {
     Kakao: any;
     naver: any;
+    google: any;
   }
 }
 
@@ -30,9 +31,9 @@ export default function Login() {
           width={360}
         />
         <SocialLogins>
-          <KakaoLogin />
-          <NaverLogin />
-          {/* <GoogleLogin /> */}
+          <KakaoLoginButton />
+          <NaverLoginButton />
+          <GoogleLoginButton />
         </SocialLogins>
       </SignWrap>
     </LoginContainer>
