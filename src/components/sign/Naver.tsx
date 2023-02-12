@@ -31,9 +31,7 @@ export const NaverLoginButton = () => {
         console.log(profile_image);
       }
     });
-    // 요기!
   };
-  // console.log(window);
 
   const userAccessToken = (window: any) => {
     window.location.href.includes("access_token") && getToken();
@@ -41,15 +39,10 @@ export const NaverLoginButton = () => {
 
   const getToken = async () => {
     const token = window.location.href.split("=")[1].split("&")[0];
-    // console.log, alert 창을 통해 토큰이 잘 추출 되는지 확인하자!
-
     console.log(token);
-    // 이후 로컬 스토리지 또는 state에 저장하여 사용하자!
     localStorage.setItem("access_token", token);
-    // setGetToken(token)
   };
 
-  // 화면 첫 렌더링이후 바로 실행하기 위해 useEffect 를 사용하였다.
   useEffect(() => {
     try {
       if (typeof window !== "undefined") {

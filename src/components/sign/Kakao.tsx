@@ -38,8 +38,8 @@ export const KakaoLoginButton = () => {
   return (
     <>
       <Image
-        width="200"
-        height="40"
+        width="206"
+        height="38"
         src={require("../../image/sp-kakaoLogin.png")}
         alt="kakao login"
         onClick={kakaoLoginHandler}

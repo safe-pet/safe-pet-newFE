@@ -1,29 +1,36 @@
 import Image from "next/image";
 import { useEffect } from "react";
+import { GoogleLogin } from "@react-oauth/google";
+import axios from "axios";
 
 export const GoogleLoginButton = () => {
-  const initializeGoogleLogin = () => {
-    window.onload = () => {};
+  const getUserInfo = async (credentialResponse: any) => {
+    const data = await axios.get(
+      `https://www.googleapis.com/oauth2/v3/userinfo`,
+      {
+        headers: {
+          access_token: `Bearer ${credentialResponse}`,
+        },
+      },
+    );
+    console.log("userDataa", data);
   };
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      window;
-      setTimeout(() => {
-        initializeGoogleLogin();
-      }, 100);
-    }
-  }, []);
+  //https://www.googleapis.com/oauth2/v3/userinfo
   return (
     <>
-      <button id="google-login-button">
-        <Image
-          width="200"
-          height="40"
-          src={require("../../image/sp-googleLogin.png")}
-          alt="google login"
-        />
-      </button>
+      {/* <Image
+        width="200"
+        height="40"
+        src={require("../../image/sp-googleLogin.png")}
+        alt="google login"
+      /> */}
+      <GoogleLogin
+        onSuccess={credentialResponse => {
+          console.log("1111", credentialResponse.credential);
+          getUserInfo(credentialResponse.credential);
+        }}
+        onError={() => console.log("login faild")}
+      />
     </>
   );
 };
