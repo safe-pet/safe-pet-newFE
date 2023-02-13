@@ -6,10 +6,10 @@ import axios from "axios";
 export const GoogleLoginButton = () => {
   const getUserInfo = async (credentialResponse: any) => {
     const data = await axios.get(
-      `https://www.googleapis.com/oauth2/v3/userinfo`,
+      `https://www.googleapis.com/auth/userinfo.profile`,
       {
         headers: {
-          access_token: `Bearer ${credentialResponse}`,
+          Authorization: `Bearer ${credentialResponse}`,
         },
       },
     );
@@ -26,7 +26,7 @@ export const GoogleLoginButton = () => {
       /> */}
       <GoogleLogin
         onSuccess={credentialResponse => {
-          console.log("1111", credentialResponse.credential);
+          console.log("1111", credentialResponse);
           getUserInfo(credentialResponse.credential);
         }}
         onError={() => console.log("login faild")}
