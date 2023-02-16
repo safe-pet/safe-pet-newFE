@@ -17,6 +17,13 @@ export const ParcelOutPet = () => {
             unoptimized
           />
           <PostInfo>
+            <Image
+              width={50}
+              height={50}
+              src={`https://source.boringavatars.com/beam/110/$1?colors=DF9E75,A9653B,412513,412510,412500`}
+              alt="프로필이미지"
+              unoptimized
+            />
             <p>
               호창쓰<span> / 네발바닥냥카페</span>
             </p>

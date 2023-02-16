@@ -13,7 +13,7 @@ export const Layout = ({ children }: any) => {
       {pathname === "/login" ? null : (
         <>
           <Header />
-          <MenuBar />
+          {/* <MenuBar /> */}
           <Footer />
         </>
       )}

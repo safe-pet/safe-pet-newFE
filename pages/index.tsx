@@ -5,6 +5,7 @@ import { ParcelOutPet } from "../src/components/mainPage/parcelOutPet/ParcelOutP
 import { EventSlide } from "../src/components/mainPage/event/EventSlide";
 import { Layout } from "../src/components/layout";
 import { Map } from "react-kakao-maps-sdk";
+import MenuBar from "../src/components/layout/menuBar/MenuBar";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <EventSlide />
         <BestMarkets />
         <ParcelOutPet />
+        <MenuBar />
       </Container>
     </HomeContainer>
   );
