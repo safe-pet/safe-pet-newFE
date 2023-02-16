@@ -45,7 +45,7 @@ export default function Chat() {
 
 const Container = styled.div`
   margin: 0 auto;
-  margin-top: 130px;
+  margin: 80px 0 80px 0;
 `;
 
 const Card = styled.div`
