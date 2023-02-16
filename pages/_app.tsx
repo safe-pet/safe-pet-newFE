@@ -15,6 +15,11 @@ export default function App({ Component, pageProps }: AppProps) {
         </Layout>
       </GoogleOAuthProvider>
       <Script
+        src="https://cdn.socket.io/3.1.3/socket.io.min.js"
+        integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh"
+        crossOrigin="anonymous"
+      ></Script>
+      <Script
         src={`http://dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_KEY}&libraries=services&autoload=false`}
         strategy="beforeInteractive"
       />

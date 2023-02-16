@@ -92,11 +92,15 @@ export const EventSlide = () => {
             transition: `${indexInit}s`,
           }}
         >
-          <Image src={imageArray[imageArray.length - 1]} alt="cloneEnd" />
+          <Image
+            src={imageArray[imageArray.length - 1]}
+            alt="cloneEnd"
+            priority
+          />
           {imageArray?.map((item, index) => (
-            <Image key={index} src={item} alt="slideImg" />
+            <Image key={index} src={item} alt="slideImg" priority />
           ))}
-          <Image src={imageArray[0]} alt="cloneStart" />
+          <Image src={imageArray[0]} alt="cloneStart" priority />
         </SlideBox>
         {slideButtons.map((item, index) => {
           const { name, handler, icon } = item;

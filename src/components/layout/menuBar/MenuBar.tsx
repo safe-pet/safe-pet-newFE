@@ -76,6 +76,7 @@ const MenuBarContainer = styled.div`
   justify-content: space-around;
   margin-top: 12px;
   padding: 10px 0;
+  border-bottom: 1px solid #d6d2d2;
 `;
 
 const TabBox = styled.div`

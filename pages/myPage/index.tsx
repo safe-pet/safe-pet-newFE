@@ -26,14 +26,25 @@ export default function MyPage() {
         </Profile>
       </ItemWrap>
       <ItemWrap>
-        <span>닉네임뿌우뿌우</span>
+        <Title>
+          <p>닉네임뿌우뿌우</p>
+          <EditBtn
+            size={20}
+            onClick={() => {
+              console.log("ㅎㅇ");
+            }}
+          />
+        </Title>
+      </ItemWrap>
+      <Location>
+        <span>서울 어딘가</span>
         <EditBtn
           size={20}
           onClick={() => {
             console.log("ㅎㅇ");
           }}
         />
-      </ItemWrap>
+      </Location>
       <MyContent />
     </Container>
   );
@@ -59,8 +70,29 @@ const ItemWrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+const Title = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & p {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  & span:last-child {
+    color: gray;
+    font-size: 0.9rem;
+  }
+`;
+
+const Location = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   & span:first-child {
-    font-size: 1.2rem;
+    color: gray;
+    font-size: 0.9rem;
   }
 `;

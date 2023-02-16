@@ -1,92 +1,85 @@
 import styled from "styled-components";
-import {
-  ChangeEvent,
-  FormEvent,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
-import { io } from "socket.io-client";
+import { baseImageData } from "../../src/utils/baseImage";
+import Image from "next/image";
 
 export default function Chat() {
-  const socket = io("http://localhost:4000");
-
-  interface IChat {
-    username: string;
-    message: string;
-  }
-
-  const [chats, setChats] = useState<IChat[]>([]);
-  const [message, setMessage] = useState<string>("");
-  const chatContainerEl = useRef<HTMLDivElement>(null);
-
-  // 채팅이 길어지면(chats.length) 스크롤이 생성되므로, 스크롤의 위치를 최근 메시지에 위치시키기 위함
-  useEffect(() => {
-    if (!chatContainerEl.current) return;
-
-    const chatContainer = chatContainerEl.current;
-    const { scrollHeight, clientHeight } = chatContainer;
-
-    if (scrollHeight > clientHeight) {
-      chatContainer.scrollTop = scrollHeight - clientHeight;
-    }
-  }, [chats.length]);
-
-  // message event listener
-  useEffect(() => {
-    const messageHandler = (chat: IChat) =>
-      setChats(prevChats => [...prevChats, chat]);
-    socket.on("message", messageHandler);
-
-    return () => {
-      socket.off("message", messageHandler);
-    };
-  }, []);
-
-  const onChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    setMessage(e.target.value);
-  }, []);
-
-  const onSendMessage = useCallback(
-    (e: FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-      if (!message) return alert("메시지를 입력해 주세요.");
-
-      socket.emit("message", message, (chat: IChat) => {
-        setChats(prevChats => [...prevChats, chat]);
-        setMessage("");
-      });
-    },
-    [message],
-  );
+  let sample = {
+    id: 1,
+    roomId: 12,
+    avatar: "",
+    userName: "누구누구사장님",
+    lastContent: "분양하싈?",
+    lastMsgTime: new Date(),
+  };
+  let arrEx = Array.from({ length: 20 }, () => sample);
+  console.log(arrEx);
 
   return (
     <Container>
-      <p>new Component</p>
-      <div ref={chatContainerEl}>
-        {chats.map((chat, index) => (
-          <div key={index}>
-            <span>
-              {chat.username
-                ? socket.id === chat.username
-                  ? ""
-                  : chat.username
-                : ""}
-            </span>
-            <span className="message">{chat.message}</span>
-          </div>
-        ))}
-      </div>
-      <form onSubmit={onSendMessage}>
-        <input type="text" onChange={onChange} value={message} />
-        <button>보내기</button>
-      </form>
+      {arrEx.map((item, index) => {
+        const { userName, lastContent, lastMsgTime } = item;
+        let hour = lastMsgTime.getHours();
+        let minutes = lastMsgTime.getMinutes();
+        let AMPM = hour < 12 ? "오전" : "오후";
+        return (
+          <Card key={index}>
+            <Image
+              src={`https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcUliu4%2FbtrCY7tLpOi%2FN4XWqMAanZTpSzOoCqykJK%2Ftfile.svg`}
+              width={60}
+              height={60}
+              alt="avatar"
+            />
+            <UserInfo>
+              <div>{userName}</div>
+              <span>{lastContent}</span>
+            </UserInfo>
+            <CardFooter>
+              <span>{`${AMPM} ${hour}:${minutes}`}</span>
+            </CardFooter>
+          </Card>
+        );
+      })}
     </Container>
   );
 }
 
 const Container = styled.div`
   margin: 0 auto;
-  margin-top: 150px;
+  margin-top: 130px;
+`;
+
+const Card = styled.div`
+  margin-bottom: 3px;
+  width: 100vw;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 1px solid black;
+
+  & img {
+    margin-right: 10px;
+    border-radius: 50px;
+  }
+`;
+
+const UserInfo = styled.div`
+  width: 70vw;
+  font-size: 1rem;
+  font-weight: bold;
+
+  & span {
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: gray;
+  }
+`;
+
+const CardFooter = styled.div`
+  height: 80px;
+  & span {
+    font-size: 0.6rem;
+    color: gray;
+  }
 `;
