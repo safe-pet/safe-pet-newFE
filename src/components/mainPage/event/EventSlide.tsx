@@ -81,9 +81,6 @@ export const EventSlide = () => {
 
   return (
     <Container>
-      <ContentWrap>
-        <p>EVENTS</p>
-      </ContentWrap>
       <SlideContainer onClick={(e: ClickDiv) => e.stopPropagation()}>
         <SlideBox
           style={{
@@ -157,7 +154,7 @@ const ContentWrap = styled.div`
 
 const SlideContainer = styled.div`
   margin: 0px auto;
-  margin-top: 100px;
+  margin-top: 150px;
   width: 380px;
   height: 300px;
   overflow: hidden;
@@ -213,8 +210,8 @@ const PrevNextBtn = styled.button`
 const NumBox = styled.div`
   padding: 0 5px 0 5px;
   position: absolute;
-  top: 23%;
-  right: 60px;
+  top: 20%;
+  right: 55px;
   display: flex;
   border: 1px solid gray;
   border-radius: 5px;

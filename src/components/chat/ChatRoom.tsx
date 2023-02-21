@@ -9,7 +9,11 @@ import {
 } from "react";
 import { io } from "socket.io-client";
 
-export default function Chat() {
+interface ChildProps {
+  isOpen: boolean;
+  closeRoom: () => void;
+}
+export const ChatRoom = ({ isOpen, closeRoom }: ChildProps) => {
   const socket = io("http://localhost:3001", {
     // ws:// 를 안쓰고 http를 쓴다
     path: "/socket.io", // 서버 path와 일치시켜준다
@@ -17,57 +21,37 @@ export default function Chat() {
   });
 
   useEffect(() => {
-    socket.on("connect", () => {
-      console.log("Connected");
-
-      socket.emit("events", { test: "test" });
-      socket.emit("identity", 0, (response: any) =>
-        console.log("Identity:", response),
-      );
-    });
-    socket.on("message", data => {
-      console.log("event", data);
-    });
-    socket.on("exception", data => {
-      console.log("event", data);
-    });
-    socket.on("disconnect", () => {
-      console.log("Disconnected");
-    });
-  }, []);
+    if (isOpen) {
+      socket.on("connect", () => {
+        console.log("Connected");
+      });
+    }
+  }, [isOpen]);
 
   interface IChat {
-    username: string;
+    nickname: string;
     message: string;
   }
 
   const [chats, setChats] = useState<IChat[]>([
     {
-      username: "John",
+      nickname: "John",
       message: "ㅎㅇㅎㅇㅎㅇㅇ",
     },
     {
-      username: "John",
+      nickname: "John",
       message: "ㅎㅇㅎㅇㅎㅇㅇ",
     },
     {
-      username: "John",
+      nickname: "John",
       message: "ㅎㅇㅎㅇㅎㅇㅇ",
     },
     {
-      username: "John",
+      nickname: "John",
       message: "ㅎㅇㅎㅇㅎㅇㅇ",
     },
     {
-      username: "John",
-      message: "ㅎㅇㅎㅇㅎㅇㅇ",
-    },
-    {
-      username: "John",
-      message: "ㅎㅇㅎㅇㅎㅇㅇ",
-    },
-    {
-      username: "John",
+      nickname: "John",
       message: "ㅎㅇㅎㅇㅎㅇㅇ",
     },
   ]);
@@ -86,17 +70,6 @@ export default function Chat() {
     }
   }, [chats.length]);
 
-  // message event listener
-  // useEffect(() => {
-  //   const messageHandler = (chat: IChat) =>
-  //     setChats(prevChats => [...prevChats, chat]);
-  //   socket.on("message", messageHandler);
-
-  //   return () => {
-  //     socket.off("message", messageHandler);
-  //   };
-  // }, []);
-
   const onChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     setMessage(e.target.value);
   }, []);
@@ -104,30 +77,54 @@ export default function Chat() {
   const onSendMessage = useCallback(
     (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      console.log("11111", message);
+      console.log("11111", {
+        nickname: "john111",
+        message: message,
+      });
       if (!message) return alert("메시지를 입력해 주세요.");
 
-      socket.emit("message", message, (chat: IChat) => {
-        console.log(chat);
-        console.log("22222", message);
-        setChats(prevChats => [...prevChats, chat]);
-        setMessage("");
+      socket.emit(
+        "message",
+        {
+          nickname: "john111",
+          message: message,
+        },
+        (chat: IChat) => {
+          console.log(chat);
+          console.log("22222", {
+            nickname: "john111",
+            message: message,
+          });
+          setChats(prevChats => [...prevChats, chat]);
+          setMessage("");
+        },
+      );
+      console.log("3333", {
+        nickname: "john111",
+        message: message,
       });
-      console.log("3333", message);
     },
     [message],
   );
 
   return (
-    <Container>
+    <Container
+      style={
+        isOpen
+          ? { transform: "translate(-50%, -50%)" }
+          : { transform: "translate(150%, -50%)" }
+      }
+      onClick={e => e.stopPropagation()}
+    >
+      <button onClick={closeRoom}>닫기</button>
       <div ref={chatContainerEl}>
         {chats.map((chat, index) => (
           <div key={index}>
             <span>
-              {chat.username
-                ? socket.id === chat.username
+              {chat.nickname
+                ? socket.id === chat.nickname
                   ? ""
-                  : chat.username
+                  : chat.nickname
                 : ""}
             </span>
             <span className="message">{chat.message}</span>
@@ -140,9 +137,15 @@ export default function Chat() {
       </form>
     </Container>
   );
-}
+};
 
 const Container = styled.div`
-  margin: 0 auto;
-  margin-top: 150px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  transition: 0.4s;
+  z-index: 10;
 `;

@@ -2,195 +2,42 @@ import styled from "styled-components";
 import Image from "next/image";
 
 export const ParcelOutPet = () => {
+  let testArr = Array.from({ length: 20 }, () => {
+    0;
+  });
   return (
     <Container>
       <ContentWrap>
         <p>New Friends</p>
       </ContentWrap>
       <PostGrid>
-        <PostCardWrap>
-          <Image
-            width={300}
-            height={300}
-            src={require("../../../image/sp-dummy1.png")}
-            alt="썸네일"
-            unoptimized
-          />
-          <PostInfo>
-            <Image
-              width={50}
-              height={50}
-              src={`https://source.boringavatars.com/beam/110/$1?colors=DF9E75,A9653B,412513,412510,412500`}
-              alt="프로필이미지"
-              unoptimized
-            />
-            <p>
-              호창쓰<span> / 네발바닥냥카페</span>
-            </p>
-            <span>서울</span>
-            <span>남 / 30대</span>
-          </PostInfo>
-        </PostCardWrap>
-        <PostCardWrap>
-          <Image
-            width={300}
-            height={300}
-            src={require("../../../image/sp-dummy3.png")}
-            alt="썸네일"
-            unoptimized
-          />
-          <PostInfo>
-            <p>
-              호창쓰<span> / 네발바닥냥카페</span>
-            </p>
-            <span>지역</span>
-            <span>남 / 30대</span>
-          </PostInfo>
-        </PostCardWrap>
-        <PostCardWrap>
-          <Image
-            width={300}
-            height={300}
-            src={require("../../../image/sp-dummy2.png")}
-            alt="썸네일"
-            unoptimized
-          />
-          <PostInfo>
-            <p>
-              닉네임<span> / 사업자 상호명</span>
-            </p>
-            <span>지역</span>
-            <span>성별 / 연령대</span>
-          </PostInfo>
-        </PostCardWrap>
-        <PostCardWrap>
-          <Image
-            width={300}
-            height={300}
-            src={require("../../../image/sp-dummy1.png")}
-            alt="썸네일"
-            unoptimized
-          />
-          <PostInfo>
-            <p>
-              닉네임<span> / 사업자 상호명</span>
-            </p>
-            <span>지역</span>
-            <span>성별 / 연령대</span>
-          </PostInfo>
-        </PostCardWrap>
-        <PostCardWrap>
-          <Image
-            width={300}
-            height={300}
-            src={require("../../../image/sp-dummy3.png")}
-            alt="썸네일"
-            unoptimized
-          />
-          <PostInfo>
-            <p>
-              닉네임<span> / 사업자 상호명</span>
-            </p>
-            <span>지역</span>
-            <span>성별 / 연령대</span>
-          </PostInfo>
-        </PostCardWrap>
-        <PostCardWrap>
-          <Image
-            width={300}
-            height={300}
-            src={require("../../../image/sp-dummy2.png")}
-            alt="썸네일"
-            unoptimized
-          />
-          <PostInfo>
-            <p>
-              닉네임<span> / 사업자 상호명</span>
-            </p>
-            <span>지역</span>
-            <span>성별 / 연령대</span>
-          </PostInfo>
-        </PostCardWrap>
-        <PostCardWrap>
-          <Image
-            width={300}
-            height={300}
-            src={require("../../../image/sp-dummy1.png")}
-            alt="썸네일"
-            unoptimized
-          />
-          <PostInfo>
-            <p>
-              닉네임<span> / 사업자 상호명</span>
-            </p>
-            <span>지역</span>
-            <span>성별 / 연령대</span>
-          </PostInfo>
-        </PostCardWrap>
-        <PostCardWrap>
-          <Image
-            width={300}
-            height={300}
-            src={require("../../../image/sp-dummy3.png")}
-            alt="썸네일"
-            unoptimized
-          />
-          <PostInfo>
-            <p>
-              닉네임<span> / 사업자 상호명</span>
-            </p>
-            <span>지역</span>
-            <span>성별 / 연령대</span>
-          </PostInfo>
-        </PostCardWrap>
-        <PostCardWrap>
-          <Image
-            width={300}
-            height={300}
-            src={require("../../../image/sp-dummy1.png")}
-            alt="썸네일"
-            unoptimized
-          />
-          <PostInfo>
-            <p>
-              닉네임<span> / 사업자 상호명</span>
-            </p>
-            <span>지역</span>
-            <span>성별 / 연령대</span>
-          </PostInfo>
-        </PostCardWrap>
-        <PostCardWrap>
-          <Image
-            width={300}
-            height={300}
-            src={require("../../../image/sp-dummy1.png")}
-            alt="썸네일"
-            unoptimized
-          />
-          <PostInfo>
-            <p>
-              닉네임<span> / 사업자 상호명</span>
-            </p>
-            <span>지역</span>
-            <span>성별 / 연령대</span>
-          </PostInfo>
-        </PostCardWrap>
-        <PostCardWrap>
-          <Image
-            width={300}
-            height={300}
-            src={require("../../../image/sp-dummy1.png")}
-            alt="썸네일"
-            unoptimized
-          />
-          <PostInfo>
-            <p>
-              닉네임<span> / 사업자 상호명</span>
-            </p>
-            <span>지역</span>
-            <span>성별 / 연령대</span>
-          </PostInfo>
-        </PostCardWrap>
+        {testArr.map((item, index) => {
+          return (
+            <PostCardWrap key={index}>
+              <Image
+                width={300}
+                height={300}
+                src={require("../../../image/sp-dummy1.png")}
+                alt="썸네일"
+                unoptimized
+              />
+              <PostInfo>
+                <Image
+                  width={50}
+                  height={50}
+                  src={`https://source.boringavatars.com/beam/110/$1?colors=DF9E75,A9653B,412513,412510,412500`}
+                  alt="프로필이미지"
+                  unoptimized
+                />
+                <p>
+                  호창쓰<span> / 네발바닥냥카페</span>
+                </p>
+                <span>서울</span>
+                <span>남 / 30대</span>
+              </PostInfo>
+            </PostCardWrap>
+          );
+        })}
       </PostGrid>
     </Container>
   );
@@ -203,7 +50,6 @@ const Container = styled.div`
   align-items: center;
 `;
 const ContentWrap = styled.div`
-  margin: 30px 0 30px 0;
   display: flex;
   & p {
     width: 90vw;

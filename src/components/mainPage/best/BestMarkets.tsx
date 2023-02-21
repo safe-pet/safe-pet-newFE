@@ -176,14 +176,14 @@ const PrevNextBtn = styled.button`
   background-color: transparent;
   position: absolute;
   left: 5%;
-  top: 95%;
+  top: 83%;
   transform: translate(-50%, -50%);
   cursor: pointer;
   transition: 0.2s ease-in;
   &.next {
     position: absolute;
     left: 95%;
-    top: 95%;
+    top: 83%;
     transform: translate(-50%, -50%);
   }
   &:hover {

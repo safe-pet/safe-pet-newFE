@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Image from "next/image";
 import { baseImageData } from "../../src/utils/baseImage";
-import { EditBtn } from "../../src/utils/EeditButton";
+import { EditBtn } from "../../src/utils/EditButton";
 import { MyContent } from "../../src/components/myPage/MyContent";
 
 export default function MyPage() {

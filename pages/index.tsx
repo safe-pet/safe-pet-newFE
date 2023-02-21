@@ -3,8 +3,6 @@ import { NextHead } from "../src/utils/NextHead";
 import { BestMarkets } from "../src/components/mainPage/best/BestMarkets";
 import { ParcelOutPet } from "../src/components/mainPage/parcelOutPet/ParcelOutPet";
 import { EventSlide } from "../src/components/mainPage/event/EventSlide";
-import { Layout } from "../src/components/layout";
-import { Map } from "react-kakao-maps-sdk";
 import MenuBar from "../src/components/layout/menuBar/MenuBar";
 
 export default function Home() {
@@ -25,7 +23,6 @@ const HomeContainer = styled.div`
   margin: 0;
 `;
 const Container = styled.div`
-  border: 1px solid red;
   max-width: 100vh;
   margin: 0 auto;
 `;

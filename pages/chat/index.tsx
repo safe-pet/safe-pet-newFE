@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import { baseImageData } from "../../src/utils/baseImage";
 import Image from "next/image";
+import { ChatRoom } from "../../src/components/chat/ChatRoom";
+import { useState } from "react";
 
 export default function Chat() {
   let sample = {
@@ -12,17 +13,25 @@ export default function Chat() {
     lastMsgTime: new Date(),
   };
   let arrEx = Array.from({ length: 20 }, () => sample);
-  console.log(arrEx);
 
+  const [openChatRoom, setOpenChatRoom] = useState<number>(-1);
+
+  const openRoom = (index: number) => {
+    setOpenChatRoom(index);
+  };
+  const closeRoom = () => {
+    setOpenChatRoom(-1);
+  };
+  console.log(openChatRoom);
   return (
     <Container>
       {arrEx.map((item, index) => {
         const { userName, lastContent, lastMsgTime } = item;
-        let hour = lastMsgTime.getHours();
-        let minutes = lastMsgTime.getMinutes();
-        let AMPM = hour < 12 ? "오전" : "오후";
+        const HOUR = lastMsgTime.getHours();
+        const MINUTES = lastMsgTime.getMinutes();
+        const AMPM = HOUR < 12 ? "오전" : "오후";
         return (
-          <Card key={index}>
+          <Card key={index} onClick={() => openRoom(index)}>
             <Image
               src={`https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcUliu4%2FbtrCY7tLpOi%2FN4XWqMAanZTpSzOoCqykJK%2Ftfile.svg`}
               width={60}
@@ -34,8 +43,13 @@ export default function Chat() {
               <span>{lastContent}</span>
             </UserInfo>
             <CardFooter>
-              <span>{`${AMPM} ${hour}:${minutes}`}</span>
+              <span>{`${AMPM} ${HOUR}:${MINUTES}`}</span>
             </CardFooter>
+            <ChatRoom
+              key={`-${index}`}
+              isOpen={index === openChatRoom}
+              closeRoom={closeRoom}
+            />
           </Card>
         );
       })}
