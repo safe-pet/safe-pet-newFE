@@ -2,6 +2,8 @@ import styled from "styled-components";
 import Image from "next/image";
 import { ChatRoom } from "../../src/components/chat/ChatRoom";
 import { useState } from "react";
+import { io } from "socket.io-client";
+import { useEffect } from "react";
 
 export default function Chat() {
   let sample = {
