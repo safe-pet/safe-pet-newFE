@@ -14,7 +14,7 @@ export default function Chat() {
     lastContent: "분양하싈?",
     lastMsgTime: new Date(),
   };
-  let arrEx = Array.from({ length: 20 }, () => sample);
+  let arrEx = Array.from({ length: 3 }, () => sample);
 
   const [openChatRoom, setOpenChatRoom] = useState<number>(-1);
 
